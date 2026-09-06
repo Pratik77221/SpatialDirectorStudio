@@ -1,0 +1,22 @@
+<!doctype html><html><body><template>
+  <style>#root{position:absolute;inset:0;width:1920px;height:1080px}</style>
+  <div id="root" class="scene" data-composition-id="scene-02" data-width="1920" data-height="1080" data-duration="5">
+    <div id="camera-02" class="camera-stage">
+      <div class="chapterbar"><div><span class="chapter-no">01</span><strong>Start Flow</strong></div><div>Spatial Director Studio</div></div>
+      <div id="headline-02" class="headline-block"><div class="eyebrow">Welcome experience</div><h1 class="headline">Start with a clear directing flow.</h1><p class="dek">A compact world-space panel introduces the studio without blocking the scene.</p></div>
+      <div id="evidence-02" class="evidence-card portrait-evidence"><img class="evidence-img lens-crop" src="assets/evidence/welcome.png" alt="Spatial Director welcome interface" /></div>
+      <div id="fact-02" class="fact-card" style="right:102px;top:777px"><div class="fact-label">Primary action</div><div class="fact-value amber">Start Studio</div></div>
+      <div class="footer-rail"><div class="footer-copy">The user begins with instructions, then creates only the equipment and cast they need.</div><div class="sequence-mark">WELCOME → STUDIO</div><div class="progress-track"><span id="progress-02" class="progress-fill"></span></div></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true }); const cam = document.getElementById("camera-02"); const phase = { scale: .96 }; const drift = { p: 0 };
+    tl.to(phase, { scale: 1, duration: 1.25, ease: "power3.out" }, .25); tl.to(phase, { scale: 1.035, duration: 1.5, ease: "power2.inOut" }, 3.1);
+    tl.to(drift, { p: Math.PI * 2, duration: 5, ease: "none", onUpdate: () => { const dx = Math.sin(drift.p) * 3; const dy = Math.sin(drift.p * 1.3) * 2; cam.style.transform = `scale(${phase.scale}) translate(${dx}px,${dy}px)`; } }, 0);
+    tl.fromTo("#headline-02", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: .68, ease: "power3.out" }, .8);
+    tl.fromTo("#evidence-02", { opacity: 0, x: 65 }, { opacity: 1, x: 0, duration: .82, ease: "power3.out" }, .55);
+    tl.fromTo("#fact-02", { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: .55, ease: "power3.out" }, 1.5);
+    tl.fromTo("#progress-02", { scaleX: 0 }, { scaleX: 1, duration: 5, ease: "none" }, 0);
+    window.__timelines["scene-02"] = tl;
+  </script>
+</template></body></html>

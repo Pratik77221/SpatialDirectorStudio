@@ -1,0 +1,33 @@
+<!doctype html><html><body><template>
+  <style>#root{position:absolute;inset:0;width:1920px;height:1080px}</style>
+  <div id="root" class="scene title-scene" data-composition-id="scene-01" data-width="1920" data-height="1080" data-duration="5">
+    <div id="glow-01" class="hero-glow"></div>
+    <div style="position:relative;z-index:3;margin-top:-90px">
+      <div id="kicker-01" class="title-kicker" style="opacity:0">A spatial filmmaking workspace</div>
+      <div class="title-words"><span id="title-01-a">Spatial</span><span id="title-01-b" class="accent">Director</span><span id="title-01-c">Studio</span></div>
+      <div id="sub-01" class="title-sub" style="opacity:0">Place the scene. Direct every shot. Deliver the take.</div>
+    </div>
+    <div class="workflow-row">
+      <div id="wf-01-a" class="workflow-step"><b>01</b> Block</div>
+      <div id="wf-01-b" class="workflow-step"><b>02</b> Direct</div>
+      <div id="wf-01-c" class="workflow-step"><b>03</b> Capture</div>
+      <div id="wf-01-d" class="workflow-step"><b>04</b> Deliver</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#glow-01", { opacity: 0, scale: .86 }, { opacity: .28, scale: 1, duration: 1.2, ease: "power2.out" }, .2);
+    tl.to("#kicker-01", { opacity: 1, duration: .45, ease: "power2.out" }, .35);
+    const ids = ["#title-01-a", "#title-01-b", "#title-01-c"];
+    const starts = [.72, .89, 1.03];
+    const offsets = [78, 50, 36];
+    const durs = [.19, .15, .12];
+    ids.forEach((id, i) => { tl.set(id, { opacity: 1, y: offsets[i] }, starts[i]); tl.to(id, { y: 0, duration: durs[i], ease: "power4.out" }, starts[i]); });
+    tl.to("#sub-01", { opacity: 1, y: -4, duration: .65, ease: "power3.out" }, 1.45);
+    ["#wf-01-a", "#wf-01-b", "#wf-01-c", "#wf-01-d"].forEach((id, i) => tl.to(id, { opacity: 1, y: -8, duration: .42, ease: "power3.out" }, 2.05 + i * .23));
+    const breath = { p: 0 }; const glow = document.getElementById("glow-01");
+    tl.to(breath, { p: Math.PI * 2, duration: 2.6, ease: "none", onUpdate: () => { const s = Math.sin(breath.p); glow.style.opacity = String(.25 + s * .025); glow.style.transform = `scale(${1 + s * .012})`; } }, 1.4);
+    window.__timelines["scene-01"] = tl;
+  </script>
+</template></body></html>
+

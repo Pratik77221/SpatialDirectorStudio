@@ -1,0 +1,28 @@
+<!doctype html><html><body><template>
+  <style>#root{position:absolute;inset:0;width:1920px;height:1080px}.control-focus{position:absolute;right:121px;top:406px;width:520px;height:310px;border:2px solid rgba(242,201,76,.82);border-radius:24px;z-index:7;box-shadow:0 0 0 8px rgba(242,201,76,.08);pointer-events:none}</style>
+  <div id="root" class="scene" data-composition-id="scene-05" data-width="1920" data-height="1080" data-duration="6">
+    <div id="camera-05" class="camera-stage">
+      <div class="chapterbar"><div><span class="chapter-no">04</span><strong>Camera controls</strong></div><div>Selected rig only</div></div>
+      <div id="headline-05" class="headline-block"><div class="eyebrow">On-rig UI</div><h1 class="headline">Tune the physical rig and the edit.</h1><p class="dek">The compact solid panel sits on the camera's rear face and appears only for the selected rig.</p></div>
+      <div class="number-stack"><div id="cam-row-a" class="number-row active"><span class="key">Tripod height</span><span class="value">Extend column</span></div><div id="cam-row-b" class="number-row"><span class="key">Shot duration</span><span id="duration-05" class="value">1 sec</span></div><div id="cam-row-c" class="number-row"><span class="key">Visibility</span><span class="value">Selected only</span></div></div>
+      <div id="evidence-05" class="evidence-card portrait-evidence"><img class="evidence-img lens-crop" src="assets/evidence/camera-rear-controls-close.png" alt="Rear camera controls" /></div>
+      <div id="focus-05" class="control-focus"></div>
+      <div class="footer-rail"><div class="footer-copy">Changing height extends the tripod's center column; duration programs this camera's sequence slot.</div><div class="sequence-mark">CAMERA 1 · 4 SEC</div><div class="progress-track"><span id="progress-05" class="progress-fill"></span></div></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true }); const cam = document.getElementById("camera-05"); const phase = { scale: .955 }; const drift = { p: 0 };
+    tl.to(phase, { scale: 1, duration: 1.25, ease: "power3.out" }, .25); tl.to(phase, { scale: 1.035, duration: 1.55, ease: "power2.inOut" }, 3.8);
+    tl.to(drift, { p: Math.PI * 2, duration: 6, ease: "none", onUpdate: () => { cam.style.transform = `scale(${phase.scale}) translate(${Math.sin(drift.p)*3}px,${Math.sin(drift.p*1.3)*2}px)`; } }, 0);
+    tl.fromTo("#headline-05", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .65, ease: "power3.out" }, .5);
+    tl.fromTo("#evidence-05", { opacity: 0, x: 70 }, { opacity: 1, x: 0, duration: .85, ease: "power3.out" }, .45);
+    tl.fromTo("#focus-05", { opacity: 0, scale: .92 }, { opacity: 1, scale: 1, duration: .55, ease: "power2.out" }, 1.65);
+    const state = { v: 1 }; const readout = document.getElementById("duration-05");
+    tl.addLabel("duration-edit", 2.25); tl.to(state, { v: 4, duration: 1.2, ease: "power1.inOut", onUpdate: () => { readout.textContent = `${Math.round(state.v)} sec`; } }, "duration-edit");
+    tl.to("#cam-row-b", { backgroundColor: "rgba(242,201,76,.16)", borderColor: "rgba(242,201,76,.55)", duration: 1.2, ease: "power1.inOut" }, "duration-edit");
+    tl.to("#focus-05", { borderColor: "rgba(88,213,255,.85)", boxShadow: "0 0 0 8px rgba(88,213,255,.08)", duration: 1.2, ease: "power1.inOut" }, "duration-edit");
+    tl.fromTo("#progress-05", { scaleX: 0 }, { scaleX: 1, duration: 6, ease: "none" }, 0);
+    window.__timelines["scene-05"] = tl;
+  </script>
+</template></body></html>
+

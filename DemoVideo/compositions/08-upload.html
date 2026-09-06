@@ -1,0 +1,24 @@
+<!doctype html><html><body><template>
+  <style>#root{position:absolute;inset:0;width:1920px;height:1080px}</style>
+  <div id="root" class="scene" data-composition-id="scene-08" data-width="1920" data-height="1080" data-duration="5">
+    <div id="camera-08" class="camera-stage">
+      <div class="chapterbar"><div><span class="chapter-no">07</span><strong>Capture and upload</strong></div><div>Lens → Supabase</div></div>
+      <div id="headline-08" class="headline-block"><div class="eyebrow">Take delivery</div><h1 class="headline">The final frames leave the Lens.</h1><p class="dek">The capture completes, persists as a take, and uploads through the connected cloud adapter.</p></div>
+      <div class="number-stack"><div id="upload-row-a" class="number-row active"><span class="key">Frames ready</span><span class="value">98 JPEG</span></div><div id="upload-row-b" class="number-row"><span class="key">Capture</span><span class="value">512 × 288</span></div><div id="upload-row-c" class="number-row"><span class="key">Cadence</span><span class="value">12 FPS</span></div></div>
+      <div id="evidence-08" class="evidence-card portrait-evidence"><img class="evidence-img lens-crop" src="assets/evidence/upload-complete.png" alt="Completed upload in Lens Studio" /></div>
+      <div id="fact-08" class="fact-card" style="right:98px;top:780px;min-width:410px"><div class="fact-label">Cloud take</div><div class="fact-value cyan" style="font-size:22px">take_1788628019854</div></div>
+      <div class="footer-rail"><div class="footer-copy">Capture state returns to Ready only after the uploaded take and dashboard handoff are available.</div><div class="sequence-mark">SUPABASE CONNECTED</div><div class="progress-track"><span id="progress-08" class="progress-fill"></span></div></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true }); const cam = document.getElementById("camera-08"); const phase = { scale: .955 }; const drift = { p: 0 };
+    tl.to(phase, { scale: 1, duration: 1.2, ease: "power3.out" }, .2); tl.to(phase, { scale: 1.03, duration: 1.4, ease: "power2.inOut" }, 3.1);
+    tl.to(drift, { p: Math.PI * 2, duration: 5, ease: "none", onUpdate: () => { cam.style.transform = `scale(${phase.scale}) translate(${Math.sin(drift.p)*3}px,${Math.sin(drift.p*1.3)*2}px)`; } }, 0);
+    tl.fromTo("#headline-08", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .65, ease: "power3.out" }, .45); tl.fromTo("#evidence-08", { opacity: 0, x: 70 }, { opacity: 1, x: 0, duration: .8, ease: "power3.out" }, .4);
+    tl.fromTo("#fact-08", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: .5, ease: "power3.out" }, 1.55);
+    tl.to("#upload-row-b", { backgroundColor: "rgba(88,213,255,.14)", borderColor: "rgba(88,213,255,.48)", duration: .35 }, 2.2); tl.to("#upload-row-c", { backgroundColor: "rgba(88,213,255,.14)", borderColor: "rgba(88,213,255,.48)", duration: .35 }, 2.8);
+    tl.fromTo("#progress-08", { scaleX: 0 }, { scaleX: 1, duration: 5, ease: "none" }, 0);
+    window.__timelines["scene-08"] = tl;
+  </script>
+</template></body></html>
+

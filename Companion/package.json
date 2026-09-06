@@ -1,0 +1,19 @@
+{
+  "name": "spatial-director-companion",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "processor": "tsx backend/processor.ts",
+    "check": "node --check server.mjs && node --check public/app.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.0",
+    "ffmpeg-static": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}

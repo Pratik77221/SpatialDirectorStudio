@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spatial-director.local/schemas/take-manifest-v1.json",
+  "title": "Spatial Director Take Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "takeId",
+    "createdAtMs",
+    "width",
+    "height",
+    "fps",
+    "durationSeconds",
+    "frameCount",
+    "frames",
+    "shots"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "takeId": { "type": "string", "pattern": "^take_[0-9]+$" },
+    "createdAtMs": { "type": "integer", "minimum": 0 },
+    "width": { "type": "integer", "minimum": 1, "maximum": 4096 },
+    "height": { "type": "integer", "minimum": 1, "maximum": 4096 },
+    "fps": { "type": "integer", "const": 12 },
+    "durationSeconds": { "type": "number", "minimum": 0, "maximum": 45 },
+    "frameCount": { "type": "integer", "minimum": 0, "maximum": 540 },
+    "frames": {
+      "type": "array",
+      "maxItems": 540,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["index", "timestampMs", "fileName"],
+        "properties": {
+          "index": { "type": "integer", "minimum": 0 },
+          "timestampMs": { "type": "integer", "minimum": 0 },
+          "fileName": { "type": "string", "pattern": "^frame_[0-9]{4}\\.jpg$" }
+        }
+      }
+    },
+    "shots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["cameraId", "durationSeconds", "animation", "label"],
+        "properties": {
+          "cameraId": { "enum": ["A", "B", "C"] },
+          "durationSeconds": { "type": "number", "minimum": 1, "maximum": 15 },
+          "animation": { "enum": ["IDLE", "ACTION", "WALK"] },
+          "label": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

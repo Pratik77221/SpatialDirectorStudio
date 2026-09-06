@@ -1,0 +1,24 @@
+<!doctype html><html><body><template>
+  <style>#root{position:absolute;inset:0;width:1920px;height:1080px}</style>
+  <div id="root" class="scene" data-composition-id="scene-03" data-width="1920" data-height="1080" data-duration="7">
+    <div id="camera-03" class="camera-stage">
+      <div class="chapterbar"><div><span class="chapter-no">02</span><strong>Cast</strong></div><div>Choose → Place → Perform</div></div>
+      <div id="headline-03" class="headline-block"><div class="eyebrow">Flexible cast</div><h1 class="headline">Choose two characters. Block the confrontation.</h1><p class="dek">The picker keeps four prototype performers available while the stage accepts only the cast the user wants.</p></div>
+      <div class="number-stack"><div id="cast-row-a" class="number-row active"><span class="key">Picker</span><span class="value">4 choices</span></div><div id="cast-row-b" class="number-row"><span class="key">Placed</span><span class="value">2 cast</span></div><div id="cast-row-c" class="number-row"><span class="key">Blocking</span><span class="value">Face to face</span></div></div>
+      <div id="evidence-03" class="split-grid"><div class="evidence-card"><img id="cast-img-a" class="evidence-img lens-crop" src="assets/evidence/character-picker.png" alt="Four-character picker" /></div><div class="evidence-card"><img id="cast-img-b" class="evidence-img lens-crop" src="assets/evidence/two-cast.png" alt="Two placed characters" /></div></div>
+      <div class="footer-rail"><div class="footer-copy">Character selection leads directly to spatial blocking and animation-ready performers.</div><div class="sequence-mark">CAST 2 / 3</div><div class="progress-track"><span id="progress-03" class="progress-fill"></span></div></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true }); const cam = document.getElementById("camera-03"); const phase = { scale: .955 }; const drift = { p: 0 };
+    tl.to(phase, { scale: 1, duration: 1.35, ease: "power3.out" }, .2); tl.to(phase, { scale: 1.025, duration: 1.6, ease: "power2.inOut" }, 4.6);
+    tl.to(drift, { p: Math.PI * 2 * 1.25, duration: 7, ease: "none", onUpdate: () => { cam.style.transform = `scale(${phase.scale}) translate(${Math.sin(drift.p)*3}px,${Math.sin(drift.p*1.3)*2}px)`; } }, 0);
+    tl.fromTo("#headline-03", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .65, ease: "power3.out" }, .55);
+    tl.fromTo("#evidence-03", { opacity: 0, x: 70 }, { opacity: 1, x: 0, duration: .9, ease: "power3.out" }, .5);
+    tl.to("#cast-row-a", { backgroundColor: "rgba(12,15,20,.9)", borderColor: "rgba(255,255,255,.14)", duration: .35 }, 2.8);
+    tl.to("#cast-row-b", { backgroundColor: "rgba(242,201,76,.16)", borderColor: "rgba(242,201,76,.55)", duration: .35 }, 2.8);
+    tl.to("#cast-row-c", { backgroundColor: "rgba(88,213,255,.14)", borderColor: "rgba(88,213,255,.48)", duration: .35 }, 4.4);
+    tl.fromTo("#progress-03", { scaleX: 0 }, { scaleX: 1, duration: 7, ease: "none" }, 0);
+    window.__timelines["scene-03"] = tl;
+  </script>
+</template></body></html>

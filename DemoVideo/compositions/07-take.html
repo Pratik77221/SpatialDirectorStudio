@@ -1,0 +1,28 @@
+<!doctype html><html><body><template>
+  <style>#root{position:absolute;inset:0;width:1920px;height:1080px}.take-title{position:absolute;left:92px;top:57px;z-index:10;font-family:Arial Black,Arial,sans-serif;font-size:34px;letter-spacing:-.035em}.take-subtitle{position:absolute;right:92px;top:66px;z-index:10;color:#9aa4b2;font-family:Consolas,monospace;font-size:16px;letter-spacing:.1em;text-transform:uppercase}</style>
+  <div id="root" class="scene" data-composition-id="scene-07" data-width="1920" data-height="1080" data-duration="12">
+    <div class="take-title">The programmed director sequence</div><div class="take-subtitle">Exact runtime · 12.0 seconds</div>
+    <div class="take-stage">
+      <div id="take-frame-07" class="take-frame">
+        <img id="take-07-a" class="take-shot first" src="assets/evidence/before-take.png" alt="Camera 1 shot" />
+        <img id="take-07-b" class="take-shot" src="assets/evidence/take-shot1.png" alt="Camera 2 shot" />
+        <img id="take-07-c" class="take-shot" src="assets/evidence/take-shot2.png" alt="Camera 3 shot" />
+        <div class="take-head"><div class="rec-label">DIRECTOR TAKE · RECORDING</div><div id="take-clock-07" class="take-clock">00.0 / 12.0</div></div>
+        <div class="camera-pills"><div id="pill-07-a" class="camera-pill">CAMERA 1 · 4 SEC</div><div id="pill-07-b" class="camera-pill">CAMERA 2 · 4 SEC</div><div id="pill-07-c" class="camera-pill">CAMERA 3 · 4 SEC</div></div>
+        <div class="take-timeline"><div class="take-segments"><div class="take-segment"><span id="segment-07-a"></span></div><div class="take-segment"><span id="segment-07-b"></span></div><div class="take-segment"><span id="segment-07-c"></span></div></div><div class="take-labels"><span>Shot 1 · 0–4s</span><span>Shot 2 · 4–8s</span><span>Shot 3 · 8–12s</span></div></div>
+      </div>
+    </div>
+    <div class="footer-rail"><div class="footer-copy">Two performers animate while the Program Camera cuts automatically across all three rigs.</div><div class="sequence-mark">4 SEC + 4 SEC + 4 SEC = 12 SEC</div><div class="progress-track"><span id="progress-07" class="progress-fill"></span></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true }); const active = { backgroundColor: "rgba(242,201,76,.2)", color: "#f2c94c", borderColor: "rgba(242,201,76,.62)" }; const idle = { backgroundColor: "rgba(9,11,15,.84)", color: "#9aa4b2", borderColor: "rgba(255,255,255,.18)" };
+    gsap.set("#pill-07-a", active);
+    tl.fromTo("#take-frame-07", { scale: .96, opacity: 0 }, { scale: 1, opacity: 1, duration: .55, ease: "power3.out" }, 0);
+    tl.fromTo("#segment-07-a", { scaleX: 0 }, { scaleX: 1, duration: 4, ease: "none" }, 0);
+    tl.set("#take-07-a", { opacity: 0 }, 4); tl.set("#take-07-b", { opacity: 1 }, 4); tl.set("#pill-07-a", idle, 4); tl.set("#pill-07-b", active, 4); tl.fromTo("#segment-07-b", { scaleX: 0 }, { scaleX: 1, duration: 4, ease: "none" }, 4);
+    tl.set("#take-07-b", { opacity: 0 }, 8); tl.set("#take-07-c", { opacity: 1 }, 8); tl.set("#pill-07-b", idle, 8); tl.set("#pill-07-c", active, 8); tl.fromTo("#segment-07-c", { scaleX: 0 }, { scaleX: 1, duration: 4, ease: "none" }, 8);
+    const clock = { v: 0 }; const readout = document.getElementById("take-clock-07"); tl.to(clock, { v: 12, duration: 12, ease: "none", onUpdate: () => { readout.textContent = `${clock.v.toFixed(1).padStart(4,"0")} / 12.0`; } }, 0);
+    tl.fromTo("#progress-07", { scaleX: 0 }, { scaleX: 1, duration: 12, ease: "none" }, 0);
+    window.__timelines["scene-07"] = tl;
+  </script>
+</template></body></html>

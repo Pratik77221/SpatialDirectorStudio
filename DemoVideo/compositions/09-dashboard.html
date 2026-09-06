@@ -1,0 +1,22 @@
+<!doctype html><html><body><template>
+  <style>#root{position:absolute;inset:0;width:1920px;height:1080px}.dash-overlay{position:absolute;left:267px;right:267px;top:180px;bottom:142px;z-index:7;pointer-events:none;border-radius:24px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}.dash-play{position:absolute;left:50%;top:52%;z-index:9;width:76px;height:76px;border-radius:50%;display:grid;place-items:center;transform:translate(-50%,-50%);background:rgba(7,9,13,.84);border:1px solid rgba(255,255,255,.22);color:#f5f2ea;font-size:31px;padding-left:5px;box-shadow:0 18px 48px rgba(0,0,0,.45)}.dash-video-live{position:absolute;left:350px;top:130px;width:977px;height:546px;overflow:hidden;z-index:5;opacity:0}.dash-video-live img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%;opacity:0}.dash-video-live img:first-child{opacity:1}</style>
+  <div id="root" class="scene" data-composition-id="scene-09" data-width="1920" data-height="1080" data-duration="8">
+    <div id="camera-09" class="camera-stage">
+      <div class="chapterbar"><div><span class="chapter-no">08</span><strong>Web dashboard</strong></div><div>Program output · Take 08</div></div>
+      <div id="evidence-09" class="evidence-card wide-evidence" style="top:128px;height:815px"><img class="evidence-img dashboard-crop" src="assets/evidence/dashboard-clean2.png" alt="Spatial Director dashboard" /><div id="dash-live-09" class="dash-video-live"><img id="dash-shot-09-a" src="assets/evidence/before-take.png" alt="Dashboard playback camera 1" /><img id="dash-shot-09-b" src="assets/evidence/take-shot1.png" alt="Dashboard playback camera 2" /><img id="dash-shot-09-c" src="assets/evidence/take-shot2.png" alt="Dashboard playback camera 3" /></div></div>
+      <div class="dash-overlay"></div><div id="play-09" class="dash-play">▶</div>
+      <div class="fact-card" style="left:112px;top:770px"><div class="fact-label">Render status</div><div class="fact-value cyan">Ready</div></div>
+      <div class="fact-card" style="right:112px;top:770px"><div class="fact-label">Delivery</div><div class="fact-value amber">Download MP4</div></div>
+      <div class="footer-rail"><div class="footer-copy">The browser receives a playable H.264 take, shot metadata, render state, copy link, and download action.</div><div class="sequence-mark">12.1 SEC · 98 FRAMES</div><div class="progress-track"><span id="progress-09" class="progress-fill"></span></div></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true }); const cam = document.getElementById("camera-09"); const phase = { scale: .955 }; const drift = { p: 0 };
+    tl.to(phase, { scale: 1, duration: 1.2, ease: "power3.out" }, .15); tl.to(phase, { scale: 1.025, duration: 1.8, ease: "power2.inOut" }, 5.4);
+    tl.to(drift, { p: Math.PI * 2 * 1.2, duration: 8, ease: "none", onUpdate: () => { cam.style.transform = `scale(${phase.scale}) translate(${Math.sin(drift.p)*3}px,${Math.sin(drift.p*1.3)*2}px)`; } }, 0);
+    tl.fromTo("#evidence-09", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .75, ease: "power3.out" }, .35); tl.fromTo("#play-09", { opacity: 0, scale: .75 }, { opacity: 1, scale: 1, duration: .42, ease: "back.out(1.7)" }, 1.1); tl.to("#play-09", { opacity: 0, duration: .25 }, 1.85);
+    tl.set("#dash-live-09", { opacity: 1 }, 1.85); tl.set("#dash-shot-09-a", { opacity: 0 }, 3.9); tl.set("#dash-shot-09-b", { opacity: 1 }, 3.9); tl.set("#dash-shot-09-b", { opacity: 0 }, 6.1); tl.set("#dash-shot-09-c", { opacity: 1 }, 6.1);
+    tl.fromTo("#progress-09", { scaleX: 0 }, { scaleX: 1, duration: 8, ease: "none" }, 0);
+    window.__timelines["scene-09"] = tl;
+  </script>
+</template></body></html>

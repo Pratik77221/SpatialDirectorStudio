@@ -1,0 +1,64 @@
+- !<AssetImportMetadata/32f76a9b-9b70-4e63-b0c1-d80eee65dd47>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 16215c2f-a2aa-4340-bced-490cc8f96186
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 16215c2f-a2aa-4340-bced-490cc8f96186
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 5c3e0d48-9c1c-4d67-82ef-fafca4e89361
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/5c3e0d48-9c1c-4d67-82ef-fafca4e89361>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: c9154731-1d7b-4638-99ea-ef8e9c1bc9cd
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    durationSeconds: false
+    fovDegrees: false
+    maxHeightOffset: false
+    minHeightOffset: false
+    rigId: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - rigId: A
+      fovDegrees: !<float> 60.000000
+      durationSeconds: !<float> 3.000000
+      minHeightOffset: !<float> -3.000000
+      maxHeightOffset: !<float> 20.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #38BDF8;\">Spatial Director Camera Rig</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"Shot Settings"}'
+    - '// @input string rigId = "A" {"hint":"Stable shot identifier used by manual cuts and the timeline."}'
+    - '// @input float fovDegrees = 60 {"hint":"Program Camera vertical field of view in degrees.", "widget":"slider", "min":20, "max":90, "step":1}'
+    - '// @input float durationSeconds = 4 {"hint":"Initial recording time for this camera in the director sequence.", "widget":"slider", "min":1, "max":15, "step":1}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Tripod Controls"}'
+    - '// @input float minHeightOffset = -3 {"hint":"Lowest center-column extension. Kept above collapse so the stand remains physical."}'
+    - '// @input float maxHeightOffset = 20 {"hint":"Highest center-column extension in centimeters."}'
+    - '// @ui {"widget":"group_end"}'

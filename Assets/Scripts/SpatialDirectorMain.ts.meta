@@ -1,0 +1,101 @@
+- !<AssetImportMetadata/fa749210-f458-4181-815d-a2d5ff549ca3>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 26f6005a-9047-486b-903f-ebb4497f6ab4
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 26f6005a-9047-486b-903f-ebb4497f6ab4
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> a648668a-939f-4e56-9aed-dd65b8083928
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/a648668a-939f-4e56-9aed-dd65b8083928>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 9f44967f-e199-40cf-865f-10cf4ccc6c56
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    characterRoot: false
+    debugColliders: false
+    fallAnimation: false
+    idleAnimation: false
+    keyLight: false
+    kickAnimation: false
+    placementCursor: false
+    processorFunction: false
+    programCameraObject: false
+    rigA: false
+    rigB: false
+    rigC: false
+    runAnimation: false
+    storageBucket: false
+    supabaseProject: false
+    ui: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - ui: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      characterRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      idleAnimation: !<reference.AnimationAsset> 00000000-0000-0000-0000-000000000000
+      runAnimation: !<reference.AnimationAsset> 00000000-0000-0000-0000-000000000000
+      kickAnimation: !<reference.AnimationAsset> 00000000-0000-0000-0000-000000000000
+      fallAnimation: !<reference.AnimationAsset> 00000000-0000-0000-0000-000000000000
+      programCameraObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      rigA: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      rigB: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      rigC: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      keyLight: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      placementCursor: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      supabaseProject: !<reference.SupabaseProject> 00000000-0000-0000-0000-000000000000
+      storageBucket: spatial-director-takes
+      processorFunction: ""
+      debugColliders: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">Spatial Director Studio MVP</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"Authored Scene"}'
+    - '// @input AssignableType_1 ui {"hint":"UIKit panel component that emits director actions and displays state."}'
+    - '// @input SceneObject characterRoot {"hint":"Authored stage anchor under which the selected Mixamo characters are instantiated."}'
+    - '// @input Asset.AnimationAsset idleAnimation {"hint":"Shared Mixamo idle animation for every roster character."}'
+    - '// @input Asset.AnimationAsset runAnimation {"hint":"Shared in-place Mixamo run animation for the opening movie beat."}'
+    - '// @input Asset.AnimationAsset kickAnimation {"hint":"Shared Mixamo kick animation for the fight beat."}'
+    - '// @input Asset.AnimationAsset fallAnimation {"hint":"Shared Mixamo fall animation for the reaction beat."}'
+    - '// @input SceneObject programCameraObject {"hint":"Independent camera that renders the clean Program output."}'
+    - '// @input SceneObject rigA {"hint":"Editable proxy for Camera 1."}'
+    - '// @input SceneObject rigB {"hint":"Editable proxy for Camera 2."}'
+    - '// @input SceneObject rigC {"hint":"Editable proxy for Camera 3."}'
+    - '// @input SceneObject keyLight {"hint":"Movable key Spotlight; its -Z axis is aimed at the character."}'
+    - '// @input SceneObject placementCursor {"hint":"Authoring-only cursor that previews a World Query surface hit."}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"Capture and Cloud"}'
+    - '// @input Asset.SupabaseProject supabaseProject {"hint":"Supabase project asset used for authentication, database rows, and take uploads. Leave empty for the deterministic Preview mock."}'
+    - '// @input string storageBucket = "director-takes" {"hint":"Storage bucket expected by the cloud adapter."}'
+    - '// @input string processorFunction {"hint":"Optional deployed Supabase Edge Function that starts MP4 processing. Leave empty for frame-sequence playback."}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"Diagnostics"}'
+    - '// @input bool debugColliders {"hint":"Draw collider wireframes for character, cameras and key light."}'
+    - '// @ui {"widget":"group_end"}'

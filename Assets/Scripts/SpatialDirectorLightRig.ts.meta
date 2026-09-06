@@ -1,0 +1,49 @@
+- !<AssetImportMetadata/b1c39d96-bca0-4e20-9515-9d62394fe3b9>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> a1a6d698-f442-430a-af30-3228b671c9f8
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> a1a6d698-f442-430a-af30-3228b671c9f8
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 37e0bf8c-a911-47e9-a052-3a3e7aae01d0
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/37e0bf8c-a911-47e9-a052-3a3e7aae01d0>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: c8fb0416-dce7-4db9-ad3b-92d32a0fbfc4
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    maxIntensity: false
+    minIntensity: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - minIntensity: 0.250000
+      maxIntensity: !<float> 6.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input float minIntensity = 0.25 {"hint":"Lowest usable key-light intensity."}'
+    - '// @input float maxIntensity = 6 {"hint":"Highest usable key-light intensity."}'

@@ -1,0 +1,70 @@
+- !<AssetImportMetadata/5a9f09a9-891b-4d1f-9c3c-b541a1a6b7fd>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 69ba8b1e-6743-4f6b-ba15-efb8b1b6cd16
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 69ba8b1e-6743-4f6b-ba15-efb8b1b6cd16
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 5b5995ea-93c4-4054-bc92-714a72ac4fb3
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/5b5995ea-93c4-4054-bc92-714a72ac4fb3>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 1e59b20e-432c-4af7-8152-813caf5c3ae1
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    accentColor: false
+    activeColor: false
+    errorColor: false
+    panelHeight: false
+    panelScale: false
+    panelWidth: false
+    readyColor: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - panelWidth: !<float> 48.000000
+      panelHeight: !<float> 52.000000
+      panelScale: 0.680000
+      accentColor: !<Vec4> {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
+      readyColor: !<Vec4> {x: 0.450000, y: 0.950000, z: 0.670000, w: 1.000000}
+      activeColor: !<Vec4> {x: 1.000000, y: 0.660000, z: 0.220000, w: 1.000000}
+      errorColor: !<Vec4> {x: 1.000000, y: 0.420000, z: 0.450000, w: 1.000000}
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #7DD3FC;\">Spatial Director Console</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"Layout"}'
+    - '// @input float panelWidth = 48 {"hint":"Panel width in centimeters at the 110 cm focal plane.", "widget":"slider", "min":44, "max":54, "step":1}'
+    - '// @input float panelHeight = 52 {"hint":"Panel height in centimeters at the 110 cm focal plane.", "widget":"slider", "min":48, "max":58, "step":1}'
+    - '// @input float panelScale = 0.68 {"hint":"Physical scale of the floating console. The default keeps controls readable without covering the scene.", "widget":"slider", "min":0.6, "max":0.85, "step":0.05}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Status Colors"}'
+    - '// @input vec4 accentColor = {0.38,0.82,1,1} {"hint":"Selected camera and active information color.", "widget":"color"}'
+    - '// @input vec4 readyColor = {0.45,0.95,0.67,1} {"hint":"Ready and successful capture color.", "widget":"color"}'
+    - '// @input vec4 activeColor = {1,0.66,0.22,1} {"hint":"Recording and processing color.", "widget":"color"}'
+    - '// @input vec4 errorColor = {1,0.42,0.45,1} {"hint":"Capture error color.", "widget":"color"}'
+    - '// @ui {"widget":"group_end"}'

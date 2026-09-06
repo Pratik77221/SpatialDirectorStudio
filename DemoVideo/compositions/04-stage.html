@@ -1,0 +1,23 @@
+<!doctype html><html><body><template>
+  <style>#root{position:absolute;inset:0;width:1920px;height:1080px}</style>
+  <div id="root" class="scene" data-composition-id="scene-04" data-width="1920" data-height="1080" data-duration="7">
+    <div id="camera-04" class="camera-stage">
+      <div class="chapterbar"><div><span class="chapter-no">03</span><strong>Block the stage</strong></div><div>Full-angle coverage</div></div>
+      <div id="headline-04" class="headline-block"><div class="eyebrow">Spatial equipment</div><h1 class="headline">Three cameras. One light. Every angle covered.</h1><p class="dek">The user creates only what the shot needs, then moves solid camera and light rigs directly in space.</p></div>
+      <div class="number-stack"><div id="stage-row-a" class="number-row active"><span class="key">Camera rigs</span><span class="value">3 movable</span></div><div id="stage-row-b" class="number-row"><span class="key">Coverage</span><span class="value">120° spacing</span></div><div id="stage-row-c" class="number-row"><span class="key">Virtual lights</span><span class="value">1 active</span></div></div>
+      <div id="evidence-04" class="split-grid"><div class="evidence-card"><img class="evidence-img lens-crop" src="assets/evidence/stage-ready.png" alt="Stage with cast cameras and light" /></div><div class="evidence-card"><img class="evidence-img lens-crop" src="assets/evidence/camera-coverage-top.png" alt="Camera coverage view" /></div></div>
+      <div class="footer-rail"><div class="footer-copy">All three rigs auto-aim at the cast while remaining freely positionable around the scene.</div><div class="sequence-mark">CAMERAS 3 / 3 · LIGHT 1 / 1</div><div class="progress-track"><span id="progress-04" class="progress-fill"></span></div></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true }); const cam = document.getElementById("camera-04"); const phase = { scale: .95 }; const drift = { p: 0 };
+    tl.to(phase, { scale: 1, duration: 1.35, ease: "power3.out" }, .2); tl.to(phase, { scale: 1.03, duration: 1.8, ease: "power2.inOut" }, 4.5);
+    tl.to(drift, { p: Math.PI * 2 * 1.2, duration: 7, ease: "none", onUpdate: () => { cam.style.transform = `scale(${phase.scale}) translate(${Math.sin(drift.p)*3}px,${Math.sin(drift.p*1.3)*2}px)`; } }, 0);
+    tl.fromTo("#headline-04", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .65, ease: "power3.out" }, .55);
+    tl.fromTo("#evidence-04", { opacity: 0, x: 70 }, { opacity: 1, x: 0, duration: .9, ease: "power3.out" }, .45);
+    tl.to("#stage-row-b", { backgroundColor: "rgba(88,213,255,.14)", borderColor: "rgba(88,213,255,.48)", duration: .42 }, 2.8);
+    tl.to("#stage-row-c", { backgroundColor: "rgba(242,201,76,.16)", borderColor: "rgba(242,201,76,.55)", duration: .42 }, 4.4);
+    tl.fromTo("#progress-04", { scaleX: 0 }, { scaleX: 1, duration: 7, ease: "none" }, 0);
+    window.__timelines["scene-04"] = tl;
+  </script>
+</template></body></html>
